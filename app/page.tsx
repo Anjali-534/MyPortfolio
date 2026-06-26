@@ -1,65 +1,55 @@
-import Image from "next/image";
+import SceneClient from "@/components/SceneClient"
+import HeroForeground from "@/components/HeroForeground"
+import SmoothScroll from "@/components/SmoothScroll"
+import Nav from "@/components/Nav"
+import About from "@/components/About"
+import Skills from "@/components/Skills"
+import Experience from "@/components/Experience"
+import Projects from "@/components/Projects"
+import Education from "@/components/Education"
+import Achievements from "@/components/Achievements"
+import Contact from "@/components/Contact"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+    <>
+      <SmoothScroll />
+
+      {/* Fixed 3D canvas — sits behind everything, visible on all sections */}
+      <SceneClient />
+
+      <Nav />
+
+      <main className="relative text-[#2B1B2E] overflow-x-hidden" style={{ zIndex: 1 }}>
+
+        {/* ── Hero — fully transparent so 3D shows at full strength ── */}
+        <section id="home" className="relative w-full min-h-screen overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(255,248,243,0.55),transparent)]" />
+          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_50%_at_80%_80%,rgba(155,93,229,0.05),transparent)]" />
+          <HeroForeground />
+        </section>
+
+        {/* ── All other sections — cream at 82% opacity so 3D glows through ── */}
+        <div style={{ backgroundColor: "rgba(255,248,243,0.82)" }}>
+          <div className="h-px bg-gradient-to-r from-transparent via-[#FF7E5F]/15 to-transparent" />
+          <About />
+          <div className="h-px bg-gradient-to-r from-transparent via-[#2B1B2E]/[0.06] to-transparent" />
+          <Skills />
+          <div className="h-px bg-gradient-to-r from-transparent via-[#2B1B2E]/[0.06] to-transparent" />
+          <Experience />
+          <div className="h-px bg-gradient-to-r from-transparent via-[#2B1B2E]/[0.06] to-transparent" />
+          <Projects />
+          <div className="h-px bg-gradient-to-r from-transparent via-[#2B1B2E]/[0.06] to-transparent" />
+          <Education />
+          <div className="h-px bg-gradient-to-r from-transparent via-[#2B1B2E]/[0.06] to-transparent" />
+          <Achievements />
+          <div className="h-px bg-gradient-to-r from-transparent via-[#2B1B2E]/[0.06] to-transparent" />
+          <Contact />
         </div>
       </main>
-    </div>
-  );
+
+      <Footer />
+    </>
+  )
 }

@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: #FFF8F3;
+  --color-foreground: #2B1B2E;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #FFF8F3;
+  --foreground: #2B1B2E;
+  /* Sunset palette tokens */
+  --coral:  #FF7E5F;
+  --pink:   #FF6B9D;
+  --violet: #9B5DE5;
+  --peach:  #FFB088;
+  --gold:   #F9C74F;
+  --lavender: #B57EDC;
+  --charcoal: #2B1B2E;
+  --mauve:  #7A5C6E;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(150deg, #FFF8F3 0%, #FDEEE3 100%);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  /* Warm noise grain */
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.022'/%3E%3C/svg%3E"),
+    linear-gradient(150deg, #FFF8F3 0%, #FDEEE3 100%);
 }
+
+/* Selection */
+::selection {
+  background: rgba(255, 126, 95, 0.28);
+  color: #2B1B2E;
+}
+
+/* Thin coral/pink scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #FF7E5F, #9B5DE5);
+  border-radius: 99px;
+}
+
+/* Section dividers */
+section + section { position: relative; }
+section + section::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(600px, 80%);
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,126,95,0.18), transparent);
+  pointer-events: none;
+}
+
+/* Perspective for 3D tilt cards */
+.perspective-wrapper { perspective: 1000px; }
+
+canvas { display: block; }

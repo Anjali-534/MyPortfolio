@@ -138,12 +138,11 @@ function FeaturedCard({ project }: { project: Project }) {
   return (
     <motion.article
       ref={ref}
-      initial={reduced ? false : { opacity: 0, y: 44 }}
+      initial={{ opacity: 0, y: 44 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, ease: EASE }}
-      whileHover={reduced ? {} : { y: -5, boxShadow: "0 18px 56px rgba(43,27,46,0.13)" }}
-      className="group relative flex flex-col rounded-3xl overflow-hidden bg-white/78 border border-[#2B1B2E]/[0.07]"
-      style={{ boxShadow: "0 6px 36px rgba(43,27,46,0.08)" }}
+      transition={{ duration: reduced ? 0 : 0.8, ease: EASE }}
+      whileHover={reduced ? {} : { y: -5 }}
+      className="group relative flex flex-col rounded-3xl overflow-hidden bg-white/78 border border-[#2B1B2E]/[0.07] shadow-[0_6px_36px_rgba(43,27,46,0.08)] hover:shadow-[0_18px_56px_rgba(43,27,46,0.13)] transition-shadow duration-300"
       aria-label={`Featured project: ${project.name}`}
     >
       {/* Thick gradient top bar */}
@@ -210,12 +209,11 @@ function RegularCard({
   return (
     <motion.article
       ref={ref}
-      initial={reduced ? false : { opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 32 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.65, delay: index * 0.07, ease: EASE }}
-      whileHover={reduced ? {} : { y: -4, boxShadow: "0 14px 44px rgba(43,27,46,0.11)" }}
-      className="group relative flex flex-col rounded-2xl overflow-hidden bg-white/70 border border-[#2B1B2E]/[0.07]"
-      style={{ boxShadow: "0 4px 24px rgba(43,27,46,0.06)" }}
+      transition={{ duration: reduced ? 0 : 0.65, delay: reduced ? 0 : index * 0.07, ease: EASE }}
+      whileHover={reduced ? {} : { y: -4 }}
+      className="group relative flex flex-col rounded-2xl overflow-hidden bg-white/70 border border-[#2B1B2E]/[0.07] shadow-[0_4px_24px_rgba(43,27,46,0.06)] hover:shadow-[0_14px_44px_rgba(43,27,46,0.11)] transition-shadow duration-300"
     >
       {/* Gradient top band */}
       <div className="h-[7px] w-full" style={{ background: accent.bar }} aria-hidden="true" />
@@ -269,9 +267,9 @@ function GroupHeader({
   return (
     <motion.div
       ref={ref}
-      initial={reduced ? false : { opacity: 0, x: -16 }}
+      initial={{ opacity: 0, x: -16 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.55, delay: index * 0.1, ease: EASE }}
+      transition={{ duration: reduced ? 0 : 0.55, delay: reduced ? 0 : index * 0.1, ease: EASE }}
       className="flex items-center gap-4"
     >
       {/* Colored rule */}
@@ -307,17 +305,17 @@ export default function Projects() {
         {/* ── Section heading ── */}
         <div ref={headingRef}>
           <motion.p
-            initial={reduced ? false : { opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={headingInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, ease: EASE }}
+            transition={{ duration: reduced ? 0 : 0.5, ease: EASE }}
             className="text-xs font-bold tracking-[0.2em] uppercase text-[#FF7E5F] mb-3"
           >
             Selected Work
           </motion.p>
           <motion.h2
-            initial={reduced ? false : { opacity: 0, y: 22 }}
+            initial={{ opacity: 0, y: 22 }}
             animate={headingInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.65, delay: 0.08, ease: EASE }}
+            transition={{ duration: reduced ? 0 : 0.65, delay: reduced ? 0 : 0.08, ease: EASE }}
             className="text-4xl sm:text-5xl font-bold tracking-tight text-[#2B1B2E] leading-[1.05]"
           >
             Things I&apos;ve{" "}

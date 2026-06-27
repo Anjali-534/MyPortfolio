@@ -11,7 +11,7 @@ export const profile = {
   github: "https://github.com/Anjali-534",
   available: "Available to join immediately",
   headshotSrc: "/images/headshot.png",
-  resumeSrc: "/resume.docx",
+  resumeSrc: "/resume.pdf",
   stack: "React · Next.js · React Native · Node.js · Go",
 }
 

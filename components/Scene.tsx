@@ -314,7 +314,7 @@ export default function Scene() {
           camera={{ position: [0, 0, 9], fov: 56 }}
           gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
           dpr={[1, 1.5]}
-          style={{ background: "transparent" }}
+          style={{ background: "transparent", pointerEvents: "none" }}
         >
           <CameraRig />
           <SceneContent />

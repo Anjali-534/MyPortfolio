@@ -11,12 +11,12 @@ export default function Footer() {
           </span>
         </div>
         
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1">
           <a
             href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#7A5C6E]/40 hover:text-[#2B1B2E]/60 transition-colors text-sm"
+            className="px-3 py-1.5 text-[#7A5C6E]/70 hover:text-[#2B1B2E] transition-colors text-sm"
           >
             GitHub
           </a>
@@ -24,13 +24,13 @@ export default function Footer() {
             href="https://www.linkedin.com/in/anjali-aggarwal534"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#7A5C6E]/40 hover:text-[#2B1B2E]/60 transition-colors text-sm"
+            className="px-3 py-1.5 text-[#7A5C6E]/70 hover:text-[#2B1B2E] transition-colors text-sm"
           >
             LinkedIn
           </a>
           <a
             href={`mailto:${profile.email}`}
-            className="text-[#7A5C6E]/40 hover:text-[#FF7E5F]/80 transition-colors text-sm"
+            className="px-3 py-1.5 text-[#7A5C6E]/70 hover:text-[#FF7E5F] transition-colors text-sm"
           >
             Email
           </a>

@@ -23,8 +23,8 @@ export const metrics = [
 ]
 
 export const skills = {
-  languages: ["JavaScript", "TypeScript", "Python", "Go", "SQL", "HTML5", "CSS3"],
-  frontend: ["React.js", "Next.js", "Tailwind CSS", "Redux / Context API", "Responsive Design"],
+  languages: ["JavaScript", "TypeScript", "Python", "Go", "PHP", "SQL", "HTML5", "CSS3"],
+  frontend: ["React.js", "Next.js", "Tailwind CSS", "Redux / Context API", "WordPress", "Responsive Design"],
   backend: ["Node.js", "Express.js", "Go (Gin)", "RESTful APIs", "JWT / OAuth", "WebSockets"],
   mobile: ["React Native", "Expo", "EAS Build", "Cross-Platform Development"],
   databases: ["PostgreSQL", "MongoDB", "Firebase"],
@@ -39,10 +39,10 @@ export const experience = [
     url: "https://aggarwalpublicity.com/",
     period: "2025 – Present",
     highlights: [
-      "Designed, built, and deployed aggarwalpublicity.com end-to-end in Next.js — owning frontend, backend, and production deployment.",
-      "Building an internal logistics & ride-hailing system — Go/Gin backend, PostgreSQL, multiple Next.js admin panels, and React Native (Expo) apps.",
-      "Developed RESTful APIs and real-time features: booking, live tracking, in-app support chat with Google Maps and AI-driven auto-reply.",
-      "Translated stakeholder requirements into scalable architecture coordinated across multiple codebases.",
+      "Built and deployed aggarwalpublicity.com using PHP and WordPress — owning frontend, backend, hosting, and a PHPMailer SMTP contact form, with a focus on accessibility and mobile optimization.",
+      "Building an internal logistics & ride-hailing system — Go/Gin backend, PostgreSQL, multiple Next.js admin panels, and React Native (Expo) apps — supporting business expansion.",
+      "Developed RESTful APIs and real-time features (booking, live tracking, in-app support chat), integrating Google Maps and an AI-driven auto-reply assistant.",
+      "Translated stakeholder requirements into scalable technical architecture coordinated across multiple codebases.",
     ],
   },
   {

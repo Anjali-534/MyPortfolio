@@ -1,62 +1,29 @@
 "use client"
 
-import { useRef, useEffect } from "react"
-import { useReducedMotion } from "framer-motion"
+import dynamic from "next/dynamic"
+
+const HeroBackgroundCanvas = dynamic(
+  () => import("@/components/HeroBackgroundCanvas"),
+  { ssr: false }
+)
 
 export default function HeroBackground() {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const prefersReduced = useReducedMotion()
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-    if (prefersReduced) {
-      video.pause()
-    } else {
-      video.play().catch(() => {})
-    }
-  }, [prefersReduced])
-
   return (
     <div
       aria-hidden="true"
       style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}
     >
-      {/* Full-bleed video — bottom-most layer */}
-      <video
-        ref={videoRef}
-        className="hero-video-el"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          opacity: 0.55,
-          filter: "blur(1px)",
-          zIndex: 0,
-          animation: prefersReduced
-            ? "none"
-            : "hero-ken-burns 20s ease-in-out infinite alternate",
-          willChange: "transform",
-        }}
-      >
-        <source src="/video.mp4" type="video/mp4" />
-      </video>
+      {/* WebGL shader gradient + floating orbs — fills hero behind all content */}
+      <HeroBackgroundCanvas />
 
-      {/* Warm cream-to-transparent scrim — above video, below all text/UI */}
+      {/* Directional scrim: protects left-side text, lets right side show colour */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           zIndex: 1,
           background:
-            "linear-gradient(105deg, rgba(255,245,238,0.72) 0%, rgba(255,235,230,0.40) 50%, rgba(255,230,240,0.15) 100%)",
+            "linear-gradient(105deg, rgba(255,245,238,0.55) 0%, rgba(255,235,230,0.22) 50%, rgba(255,230,240,0.05) 100%)",
           pointerEvents: "none",
         }}
       />

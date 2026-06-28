@@ -80,12 +80,3 @@ section + section::before {
 
 canvas { display: block; }
 
-/* Hero video Ken Burns drift — gentle scale over 20s */
-@keyframes hero-ken-burns {
-  from { transform: scale(1); }
-  to   { transform: scale(1.08); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-video-el { animation: none !important; }
-}

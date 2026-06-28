@@ -24,7 +24,7 @@ export default function Home() {
 
       <main className="relative text-[#2B1B2E] overflow-x-hidden" style={{ zIndex: 1 }}>
 
-        {/* ── Hero — video bg at z-0, 3D canvas behind, particles + text above ── */}
+        {/* ── Hero — shader gradient bg at z-0, orbs + particles + text above ── */}
         <section id="home" className="relative w-full min-h-screen overflow-hidden">
           <HeroBackground />
           <div className="absolute inset-0 pointer-events-none z-[2] bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(255,248,243,0.55),transparent)]" />

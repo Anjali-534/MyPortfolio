@@ -40,7 +40,6 @@ export default function HeroBackground() {
           objectFit: "cover",
           opacity: 0.35,
           filter: "blur(2px) saturate(1.1)",
-          mixBlendMode: "soft-light",
           zIndex: 0,
           animation: prefersReduced
             ? "none"

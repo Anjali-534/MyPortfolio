@@ -336,7 +336,7 @@ function HeadshotCard() {
           <div
             className="absolute px-3 py-1.5 rounded-full
                        border border-[#9B5DE5]/30 bg-[#9B5DE5]/10 backdrop-blur-md shadow-lg"
-            style={{ bottom: -14, left: -16 }}
+            style={{ bottom: -40, left: -16 }}
           >
             <span className="text-[#6B2DB5] text-[11px] font-semibold whitespace-nowrap">React · Node · Go</span>
           </div>

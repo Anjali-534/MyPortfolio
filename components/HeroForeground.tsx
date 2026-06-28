@@ -318,7 +318,7 @@ function HeadshotCard() {
             <div className="absolute bottom-0 left-0 right-0 px-5 py-4 z-30
                             bg-gradient-to-t from-[#FFF8F3]/90 via-[#FFF8F3]/55 to-transparent rounded-b-2xl">
               <p className="text-[#2B1B2E] text-sm font-semibold">{profile.name}</p>
-              <p className="text-[#FF7E5F] text-xs mt-0.5 font-medium">{profile.available}</p>
+              <p className="text-[#FF7E5F] text-xs mt-2 font-medium">{profile.available}</p>
             </div>
           </div>
         </motion.div>
@@ -336,7 +336,7 @@ function HeadshotCard() {
           <div
             className="absolute px-3 py-1.5 rounded-full
                        border border-[#9B5DE5]/30 bg-[#9B5DE5]/10 backdrop-blur-md shadow-lg"
-            style={{ bottom: -40, left: -16 }}
+            style={{ bottom: -56, left: -16 }}
           >
             <span className="text-[#6B2DB5] text-[11px] font-semibold whitespace-nowrap">React · Node · Go</span>
           </div>

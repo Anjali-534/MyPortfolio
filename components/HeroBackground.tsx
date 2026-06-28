@@ -31,15 +31,14 @@ export default function HeroBackground() {
         loop
         playsInline
         preload="auto"
-        poster="/hero-poster.jpg"
         style={{
           position: "absolute",
           inset: 0,
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          opacity: 0.35,
-          filter: "blur(2px) saturate(1.1)",
+          opacity: 0.55,
+          filter: "blur(1px)",
           zIndex: 0,
           animation: prefersReduced
             ? "none"
@@ -57,7 +56,7 @@ export default function HeroBackground() {
           inset: 0,
           zIndex: 1,
           background:
-            "linear-gradient(105deg, rgba(255,245,238,0.92) 0%, rgba(255,235,230,0.6) 45%, rgba(255,230,240,0.35) 100%)",
+            "linear-gradient(105deg, rgba(255,245,238,0.72) 0%, rgba(255,235,230,0.40) 50%, rgba(255,230,240,0.15) 100%)",
           pointerEvents: "none",
         }}
       />

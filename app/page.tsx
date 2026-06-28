@@ -1,4 +1,5 @@
 import SceneClient from "@/components/SceneClient"
+import HeroBackground from "@/components/HeroBackground"
 import HeroForeground from "@/components/HeroForeground"
 import SmoothScroll from "@/components/SmoothScroll"
 import Nav from "@/components/Nav"
@@ -23,10 +24,11 @@ export default function Home() {
 
       <main className="relative text-[#2B1B2E] overflow-x-hidden" style={{ zIndex: 1 }}>
 
-        {/* ── Hero — fully transparent so 3D shows at full strength ── */}
+        {/* ── Hero — video bg at z-0, 3D canvas behind, particles + text above ── */}
         <section id="home" className="relative w-full min-h-screen overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(255,248,243,0.55),transparent)]" />
-          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_50%_at_80%_80%,rgba(155,93,229,0.05),transparent)]" />
+          <HeroBackground />
+          <div className="absolute inset-0 pointer-events-none z-[2] bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(255,248,243,0.55),transparent)]" />
+          <div className="absolute inset-0 pointer-events-none z-[2] bg-[radial-gradient(ellipse_60%_50%_at_80%_80%,rgba(155,93,229,0.05),transparent)]" />
           <HeroForeground />
         </section>
 

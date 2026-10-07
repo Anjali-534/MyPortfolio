@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://my-portfolio-chi-sooty-11.vercel.app/sitemap.xml

@@ -8,9 +8,9 @@
   "theme_color": "#FF6B35",
   "icons": [
     {
-      "src": "/anjali.jpeg",
+      "src": "/anjali-icon.png",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png"
     }
   ]
 }
